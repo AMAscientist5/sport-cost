@@ -28,3 +28,28 @@ function getall(elementId, btnId) {
 document.getElementById('btn1').addEventListener('click', function() {
     getall('Cristiano', 'btn1');
 })
+
+// select button of Kevin De Bruyne
+document.getElementById('btn2').addEventListener('click', function() {
+    getall('Kevin', 'btn2');
+})
+
+// select button of Lionel Messi
+document.getElementById('btn3').addEventListener('click', function() {
+    getall('Lionel', 'btn3');
+})
+
+// select button of Kylian Mbappe
+document.getElementById('btn4').addEventListener('click', function() {
+    getall('Kylian', 'btn4');
+})
+
+// select button of Mohamed Salah
+document.getElementById('btn5').addEventListener('click', function() {
+    getall('Mohamed', 'btn5');
+})
+
+// select button of robert lewandowski
+document.getElementById('btn6').addEventListener('click', function() {
+    getall('robert', 'btn6');
+})
