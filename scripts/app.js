@@ -53,3 +53,53 @@ document.getElementById('btn5').addEventListener('click', function() {
 document.getElementById('btn6').addEventListener('click', function() {
     getall('robert', 'btn6');
 })
+
+
+
+//calculating players cost
+document.getElementById('player-calculate').addEventListener('click', function() {
+    const playerPerCost = document.getElementById('player-cost-field');
+    const playersCostValue = parseFloat(playerPerCost.value);
+    if (isNaN(playersCostValue) || playersCostValue < 0) {
+        alert('Please provide a valid number')
+        return;
+    }
+    const orderList = document.getElementById('order-list').childElementCount;
+    const totalExpense = playersCostValue * orderList;
+    const totalPlayerCostelement = document.getElementById('player-total-expense');
+    totalPlayerCostelement.innerText = totalExpense;
+})
+
+// Calculating all the cost included players, manager and coach
+document.getElementById('total-cost-calculate').addEventListener('click', function() {
+    const playerPerCost = document.getElementById('player-cost-field');
+    const playersCostValue = parseFloat(playerPerCost.value);
+    if (isNaN(playersCostValue) || playersCostValue < 0) {
+        alert('Please give all input with a valid number')
+        return;
+    }
+    const orderList = document.getElementById('order-list').childElementCount;
+    const totalExpense = playersCostValue * orderList;
+    const totalPlayerCostelement = document.getElementById('player-total-expense');
+    totalPlayerCostelement.innerText = totalExpense;
+
+    const playerExpense = parseFloat(totalPlayerCostelement.innerText);
+    const finalTotalCost = document.getElementById('final-Total');
+
+    const managerCost = document.getElementById('manager-cost');
+    const managerCostValue = parseFloat(managerCost.value);
+
+    if (isNaN(managerCostValue) || managerCostValue < 0) {
+        alert('Please provide a valid amout by number')
+        return;
+    }
+    const coachCost = document.getElementById('coach-cost');
+    const coachCostValue = parseFloat(coachCost.value);
+
+    if (isNaN(coachCostValue) || coachCostValue < 0) {
+        alert('Please provide a valid amout by number')
+        return;
+    }
+    const finalExpenses = playerExpense + managerCostValue + coachCostValue;
+    finalTotalCost.innerText = finalExpenses;
+})
